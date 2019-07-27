@@ -1,0 +1,39 @@
+{
+    "count": 4,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 3,
+            "title": "Мир кафе",
+            "logo": "http://api.worldcafe.ru/media/company/photo_2019-02-17_20-12-31.jpg",
+            "phone": "8 (812) 640-80-18",
+            "text": "",
+            "html": "<br><br>\r\nВсе предложения доступны у нас на сайте - <a href=\"http://worldcafe.ru\">worldcafe.ru</a><br>\r\nЕще один наш проект. Сервис для поиска персонала -  <a href=\"http://restojob.ru\">restojob.ru</a><br>\r\nНа все вопросы Вам могут ответить по телефону (812) 640-80-18<br>\r\n</p>"
+        },
+        {
+            "id": 4,
+            "title": "ProfitBeauty",
+            "logo": null,
+            "phone": "",
+            "text": "",
+            "html": ""
+        },
+        {
+            "id": 5,
+            "title": "Тестовая компания",
+            "logo": null,
+            "phone": "",
+            "text": "",
+            "html": ""
+        },
+        {
+            "id": 6,
+            "title": "ВШОКОЛАДЕ",
+            "logo": "http://api.worldcafe.ru/media/company/WhatsApp_Image_2019-02-21_at_20.53.28.jpeg",
+            "phone": "+7 (812) 900-40-43",
+            "text": "",
+            "html": ""
+        }
+    ]
+}

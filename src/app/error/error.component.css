@@ -1,0 +1,9 @@
+.error-message {
+    text-align: center;
+}
+.error-message > h3{
+    font-size: 22px;
+}
+.error-message > p{
+    font-size: 14px;
+}

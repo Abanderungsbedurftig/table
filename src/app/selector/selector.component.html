@@ -1,0 +1,6 @@
+<div class="form-group">
+    <div class="selector" [ngClass]="{'selector-active':isOpen === true}" (click)="showOptions()" (change)="click()">{{select}}</div>
+    <ul [ngClass]="{'ul-visible':isOpen === true}">
+        <li *ngFor="let option of options" (click)="selectOption(option)">{{option.name}}</li>
+    </ul>
+</div>

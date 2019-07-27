@@ -1,0 +1,10 @@
+<div class="selectors">
+    <app-selector selectorWidth="214" [options]="company" (onChangeSelector)="addQueryParameter($event)"></app-selector>
+    <app-selector selectorWidth="168" [options]="managers" (onChangeSelector)="addQueryParameter($event)"></app-selector>
+    <app-selector selectorWidth="142" [options]="type" (onChangeSelector)="addQueryParameter($event)"></app-selector>
+    <app-selector selectorWidth="152" [options]="objStatus" (onChangeSelector)="addQueryParameter($event)"></app-selector>
+    <div class="form-group">
+        <input [formControl]="searchControl" type="text" class="input-search" [class.error-input]="searchControl.invalid === true" placeholder="Укажите имя, ID или номер клиента"/>
+    </div>
+</div>
+

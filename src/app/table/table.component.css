@@ -1,0 +1,19 @@
+.table {
+    padding: 0 40px;
+}
+.table .table-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.table-row-header {
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 12px;
+    color: var(--txt-color);
+}
+.table-th {
+  flex-grow: 1;
+  max-width: 244px;
+  text-align: center;
+}

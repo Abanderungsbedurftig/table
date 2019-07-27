@@ -1,0 +1,97 @@
+{
+    "count": 15,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 17,
+            "title": "Горячий",
+            "ordering": 1,
+            "color": "#66CCFF"
+        },
+        {
+            "id": 14,
+            "title": "Входящий просмотр",
+            "ordering": 2,
+            "color": "#33B679"
+        },
+        {
+            "id": 8,
+            "title": "Входящий вызов",
+            "ordering": 3,
+            "color": "#7BCFA9"
+        },
+        {
+            "id": 7,
+            "title": "Жду на договор",
+            "ordering": 4,
+            "color": "#EEBD4A"
+        },
+        {
+            "id": 1,
+            "title": "Активный",
+            "ordering": 5,
+            "color": "#7EB762"
+        },
+        {
+            "id": 2,
+            "title": "Пассивный",
+            "ordering": 6,
+            "color": "#2D9AD9"
+        },
+        {
+            "id": 15,
+            "title": "Непрофильный",
+            "ordering": 7,
+            "color": "#66CCFF"
+        },
+        {
+            "id": 9,
+            "title": "Не берет трубку",
+            "ordering": 8,
+            "color": "#CCCC99"
+        },
+        {
+            "id": 13,
+            "title": "СНГ",
+            "ordering": 9,
+            "color": "#333333"
+        },
+        {
+            "id": 10,
+            "title": "Временно не ищет",
+            "ordering": 10,
+            "color": "#333366"
+        },
+        {
+            "id": 11,
+            "title": "Агент",
+            "ordering": 11,
+            "color": "#663333"
+        },
+        {
+            "id": 12,
+            "title": "Отказ работы с компанией",
+            "ordering": 12,
+            "color": "#333300"
+        },
+        {
+            "id": 3,
+            "title": "Черный список",
+            "ordering": 13,
+            "color": "#000000"
+        },
+        {
+            "id": 4,
+            "title": "Завязал с общепитом",
+            "ordering": 14,
+            "color": "#5C5C33"
+        },
+        {
+            "id": 16,
+            "title": "Скрытый",
+            "ordering": 15,
+            "color": "#808080"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+<div class="table">
+    <div class="table-row table-row-header">
+        <div class="table-th">Клиент</div>
+        <div class="table-th">Описание</div>
+        <div class="table-th">Формат</div>
+        <div class="table-th">Менеджер</div>
+        <div class="table-th">Статус объекта</div>
+    </div>
+    <div *ngIf="clients?.length">
+        <app-table-row *ngFor="let client of clients" [client]="client"></app-table-row>
+    </div> 
+</div>

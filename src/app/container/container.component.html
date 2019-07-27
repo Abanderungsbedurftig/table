@@ -1,0 +1,6 @@
+<div class="container">
+    <app-search-pannel [selectorOptions]="selectorOptions" (onChangeSelector)="getClientsFromService($event)"></app-search-pannel>
+    <app-error *ngIf="error" [message]="error.message"></app-error>
+    <app-table *ngIf="!error" [clients]="clients"></app-table>
+</div>
+

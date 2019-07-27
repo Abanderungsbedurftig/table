@@ -1,0 +1,30 @@
+<div class="table-row table-row-item">
+    <div class="table-td">
+        <div class="client-pic">
+            <img *ngIf src="{{client.contact.image}}" alt="client-pic"/>
+        </div>
+        <div class="client-info">
+            <span class="client-name">{{client.contact.first_name}} {{client.contact.last_name}}</span>
+            <span class="client-company">{{client.company}}</span>
+            <span class="client-phone" *ngIf="client.contact.phone">{{client.contact.phone | phone}}</span>
+            <span class="status status-client">{{client.status.title}}</span>
+        </div>
+    </div>
+    <div class="table-td">
+        <div class="caption">
+            {{client.text}}
+        </div>
+    </div>
+    <div class="table-td">{{client.format.title}}</div>
+    <div class="table-td">{{client.manager}}</div>
+    <div class="table-td" *ngIf="client.selection_item">
+        <span class="status status-obj status-obj-yep">Предложено</span>
+        <span class="date-status">
+            {{client.selection_item.datetime_updated | date:'dd.MM.yyyy'}} в 
+            {{client.selection_item.datetime_updated | date:'HH:mm'}}
+        </span>
+    </div>
+    <div class="table-td" *ngIf="!client.selection_item">
+        <span class="status status-obj status-obj-not">Не предложено</span>
+    </div>
+</div>

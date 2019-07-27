@@ -1,0 +1,10 @@
+[{
+    "id":4,
+    "username":"Аракчеев",
+    "email":"am@worldcafe.ru",
+    "is_staff":true,
+    "is_manager":true,
+    "is_superuser":true,
+    "phone":"+7(921)9518711",
+    "company":"Мир кафе"
+}]

@@ -1,0 +1,37 @@
+[
+    {
+        "status": 1,
+        "contact":{
+            "id":12331,
+            "first_name":"First_name",
+            "last_name":"Last_name",
+            "image":"http://image-url.com",
+            "phone": "79214441819"
+        },
+        "description":{
+            "id":792,
+            "author":{
+                "id":4,
+                "username":"Аракчеев",
+                "email":"am@worldcafe.ru",
+                "is_staff":true,
+                "is_manager":true,
+                "is_superuser":true,
+                "phone":"+7(921)9518711",
+                "company": 3
+            },
+            "text":"Есть 5 столовых. Нужно кафе в БЦ. ООО не хочет оформлять ТОЛЬКО ИП. Лишь бы было кого кормить.100-120м2 по 600руб.В Атолле сидит. Выручка 30-40 тыр. Вложил 1,80 уже отбил - что то такого же типа и надо ему. Бороться в центре за клиента не хочет. ",
+            "datetime_created":"2018-05-04T07:42:55Z",
+            "status":""
+        },
+        "format":{
+            "id":4556,
+            "title":"hgjhg"
+        },
+        "selection_item":{
+            "datetime_created":"2017-11-25T08:37:22Z",
+            "datetime_updated":"2018-01-10T22:37:12Z",
+            "status":3
+        }
+    }
+]
