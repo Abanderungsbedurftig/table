@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -38,9 +38,9 @@ export class ApiService {
     console.log('GET: ' + this.apiUrl + this.clientsApi + query);
     return this.http.get('assets/data/clients.json')
       .pipe(
-        map((data: Array<any>) => {
+        switchMap((data: Array<any>) => {
         if (!data.length) return null;
-        return data.map((client: any) => ({
+        return of(data.map((client: any) => ({
           status: client.status,
           contact: client.contact,
           company: client.description.author.company,
@@ -48,7 +48,7 @@ export class ApiService {
           text: client.description.text,
           format: client.format,
           selection_item: client.selection_item
-        }));
+        })));
       }));
   }
 
