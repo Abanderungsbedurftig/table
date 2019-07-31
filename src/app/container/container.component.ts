@@ -25,7 +25,7 @@ export class ContainerComponent implements OnInit {
       }
       this.selectorOptions = selectorOptions;
       this.clientStatuses = data.client_statuses;
-      this.getClientsFromService(null);
+      this.getClientsFromService({});
     })
     .catch(err => this.handleError(err));
   }
