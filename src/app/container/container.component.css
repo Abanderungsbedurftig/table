@@ -3,3 +3,14 @@
     margin: 0 auto;
     color: var(--font-color);
 }
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .container {
+        width: 100%;
+    }  
+}
+
+@media screen and (min-width: 481px) and (max-width: 1300px) {
+    .container {
+        width: 100%;
+    }
+}

@@ -14,3 +14,18 @@ body {
     --txt-size-min: 12px;
     --txt-size-micro: 11px;
 }
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    body {
+        --txt-size-max: 20px;
+        --txt-size-min: 18px;
+        --txt-size-micro: 17px;
+      }
+}
+
+@media screen and (min-width: 481px) and (max-width: 1300px) {
+    body {
+        --txt-size-max: 15px;
+        --txt-size-min: 13px;
+        --txt-size-micro: 12px;
+      }
+}

@@ -1,5 +1,6 @@
 import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angular/core';
 import { IOption } from '../interfaces/option';
+import { IQuery } from '../interfaces/query';
 import { FormControl, Validators } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
 
@@ -47,7 +48,7 @@ export class SearchPannelComponent implements OnInit, OnChanges {
 
   addQueryParameter(selector: any) {
     this.query[selector.type] = selector.id;
-    let queryObject = {};
+    let queryObject: IQuery = {};
     Object.keys(this.query).forEach(key => {
       if (this.query[key] !== null) queryObject[key] = this.query[key];
     });

@@ -95,3 +95,55 @@
     margin-top: 6px;
     font-size: var(--txt-size-min);
   }
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    .table-row-item {
+      height: auto;
+    }
+    .table-row {
+      flex-direction: column !important;
+  }
+    .table-td {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .caption {
+        width: 100%;
+    }
+    .client-pic {
+        width: 30vw;
+    }
+    .client-pic img {
+        width: 30vw;
+        height: 30vw;
+        width: 100%;
+    }
+    .status-client {
+        width: auto;
+    }
+    .status-obj {
+        width: 140px;
+    }
+    .date-status {
+        margin-top: 6px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 1300px) {
+    .table-td {
+        width: 17.5%;
+        max-width: 17.5%;
+    }
+    .table-th:first-child, .table-td:first-child {
+        width: 30%;
+        max-width: 30%;
+    }
+    .caption {
+        width: 94%;
+        line-height: 1.6em;
+        max-height: 9.6em;
+        overflow: hidden;
+    }
+}

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { IClient } from '../interfaces/client';
 import { ISelectors } from '../interfaces/selectors';
+import { IQuery } from '../interfaces/query';
 
 @Component({
   selector: 'app-container',
@@ -18,6 +19,7 @@ export class ContainerComponent implements OnInit {
 
   ngOnInit() {
     this.apiService.getSelectorsOptions().then(data => {
+      console.log(data);
       let selectorOptions = {
         company: data.company,
         managers: data.managers,
@@ -30,7 +32,7 @@ export class ContainerComponent implements OnInit {
     .catch(err => this.handleError(err));
   }
 
-  getClientsFromService(option: Object | null) {
+  getClientsFromService(option: IQuery | null) {
     this.apiService.getClients(option).subscribe(clients => {
       console.log('Перезагрузка данных...');
       this.clients = clients.map(client => this.getCompanyAndStatus(client));
@@ -40,7 +42,7 @@ export class ContainerComponent implements OnInit {
   }
 
   handleError(err: Error) {
-    console.log('error: ', err);
+    console.error(err);
     this.error = err;
   }
 

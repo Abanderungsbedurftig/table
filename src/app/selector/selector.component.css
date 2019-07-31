@@ -54,3 +54,26 @@
   .selector-active:after{
     content: "▲";
   }
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    .form-group {
+      width: 100% !important;
+      margin-bottom: 10px;
+    }
+    .form-group > ul {
+        z-index: 2;
+        top: 50px;
+    }
+    .form-group > ul > li {
+        height: 54px;
+        line-height: 54px;
+    }
+    .selector {
+        height: 54px;
+        line-height: 54px;
+    }
+}
+@media screen and (min-width: 481px) and (max-width: 1300px) {
+  .form-group {
+    width: 100% !important;
+  }
+}

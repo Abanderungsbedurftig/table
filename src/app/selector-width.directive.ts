@@ -8,7 +8,9 @@ export class SelectorWidthDirective implements OnInit{
   @HostBinding('style.width') width: string;
 
   ngOnInit() {
-    this.width = this.selectorWidth ? this.selectorWidth + 'px' : '142px'
+    let width = window.screen.width;
+    if (width > 1299) this.width = this.selectorWidth ? this.selectorWidth + 'px' : '142px';
+    else if (width > 481 && width < 1300) this.width = '16%';
   }
 
 }
