@@ -34,34 +34,49 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  generateUrl(path: string): string {
-    return 'https://<apiRoot>/' + path;
+  generateUrl(path: string, queryObj: IQuery = {}): string {
+    return 'https://<apiRoot>/' + path + this.generateQuery(queryObj);
   }
 
-  getSelectorsOptions(): Promise<ISelectors> {
+  async getSelectorsOptions(): Promise<ISelectors> {
+    try {
+      let company = await this.getCompanyInfo();
+      let managers = await this.getManagersInfo();
+      let selectionStatuses = await this.getSelectionStatuses();
+      let clientStatuses = await this.getClientStatuses(); 
+      let selectorsInfo = this.sortSelectiosOptions([company, managers, selectionStatuses, clientStatuses]);
+      return Promise.resolve(selectorsInfo);
+    } catch (err) {
+      Promise.reject(err);
+    }
+  }
+
+  async getCompanyInfo() {
     console.log('GET: ' + this.generateUrl(this.apiPath.company));
-    console.log('GET: ' + this.generateUrl(this.apiPath.managers));
-    console.log('GET: ' + this.generateUrl(this.apiPath.selectionStatuses));
-    console.log('GET: ' + this.generateUrl(this.apiPath.clientStatuses));
-    return Promise.all([this.getPromise(this.apiPath.fakeCompany), 
-                        this.getPromise(this.apiPath.fakeManagers), 
-                        this.getPromise(this.apiPath.fakeSelectionStatuses),
-                        this.getPromise(this.apiPath.fakeClientStatuses)
-                      ])
-      .then(data => this.sortSelectiosOptions(data)); 
-      // если произойдет ошибка хотя бы в одном запросе, то компонент container отобразит компонент error с данными об ошибке
-      // если необходимо эти запросы использовать по отдельности, то хорошо бы подкорректировать задачу
-      // просто в моем понимании мы сначала должны получить все эти данные, без которых таблица функционировать не должна
-      // но, если использование async await критично, могу переделать функции 
+    return await this.getSelectorsDataFromApi(this.apiPath.fakeCompany);
   }
 
-  getPromise(url: string): Promise<any> {
+  async getManagersInfo() {
+    console.log('GET: ' + this.generateUrl(this.apiPath.managers));
+    return await this.getSelectorsDataFromApi(this.apiPath.fakeManagers);
+  }
+
+  async getSelectionStatuses() {
+    console.log('GET: ' + this.generateUrl(this.apiPath.selectionStatuses));
+    return await this.getSelectorsDataFromApi(this.apiPath.fakeSelectionStatuses);
+  }
+
+  async getClientStatuses() {
+    console.log('GET: ' + this.generateUrl(this.apiPath.clientStatuses));
+    return await this.getSelectorsDataFromApi(this.apiPath.fakeClientStatuses);
+  }
+
+  getSelectorsDataFromApi(url) {
     return this.http.get(url).toPromise();
   }
 
-  getClients(options: IQuery | null): Observable<IClient[]> {
-    const query = options instanceof Object ? this.generateQuery(options) : '';
-    console.log('GET: ' + this.generateUrl(this.apiPath.clients + query));
+  getClients(queryObj: IQuery): Observable<IClient[]> {
+    console.log('GET: ' + this.generateUrl(this.apiPath.clients, queryObj));
     return this.http.get(this.apiPath.fakeClients)
       .pipe(
         switchMap(data => {
@@ -77,12 +92,11 @@ export class ApiService {
       }));
   }
 
-  generateQuery(options: IQuery): string{
-    let query = '';
-    Object.keys(options).forEach(key => {
-      (options[key] !== null && options[key] !== '') ? query += `${key}=${encodeURIComponent(options[key])}&` : query += '';
-    });
-    return query;
+  generateQuery(queryObj: IQuery): string{
+    return Object.keys(queryObj)
+      .filter(key => queryObj[key] !== null)
+      .map(key => `${key}=${encodeURIComponent(queryObj[key])}`)
+      .join('&');
   }
 
   sortSelectiosOptions(data: Array<any>): ISelectors {
